@@ -136,7 +136,7 @@ int main() {
     merge_sort_errorless(A,n);
 
 
-    fp = fopen("/out/steps.txt", "a+");
+    FILE *fp = fopen("/out/steps.txt", "a+");
     fprintf(fp, "%d\n",&steps);
     fclose(fp);
     fp = fopen("/out/longest_arr.txt", "a+");

@@ -129,7 +129,7 @@ int main() {
 
 	quickSort_errorless(A,0,n-1);
 
-    fp = fopen("/out/steps.txt", "a+");
+    FILE *fp = fopen("/out/steps.txt", "a+");
     fprintf(fp, "%d\n",&steps);
     fclose(fp);
     fp = fopen("/out/longest_arr.txt", "a+");
