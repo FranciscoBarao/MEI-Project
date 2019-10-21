@@ -42,11 +42,9 @@ void merge_errorless (int *a, int n, int m) {
     for (i = 0, j = m, k = 0; k < n; k++) {
         if(j == n){
             x[k] = a[i++];
-            steps++;
         }else{
             if( i == m){
                 x[k] = a[j++];
-                steps++;
             }else{
                 if( a[j] < a[i]){
                     x[k] = a[j++];
