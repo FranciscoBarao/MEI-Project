@@ -30,3 +30,8 @@
     -Se intervalo de valores for muito baixo iremos ter muitos valores repetidos o que leva a menos erros?
 
     -More elements -> more probability of occuring errorsz
+
+
+
+Values experiments
+
