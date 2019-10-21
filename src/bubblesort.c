@@ -83,7 +83,6 @@ void bubble_sort (int *a, int n) {
 
 
 int main() {
-
         int n, i;
         scanf("%lf",&eps);
         scanf("%d",&n);
@@ -111,15 +110,17 @@ int main() {
         int count = LNDS(n);
         eps = -1.0;
 
-
         //Re-organize array with error
         bubble_sort_errorless(A,n);
 
-        FILE *fp = fopen("/out/steps.txt", "a+");
-        fprintf(fp, "%d\n",&steps);
+
+        
+
+        FILE *fp = fopen("out/steps - bubblesort.txt", "a+");
+        fprintf(fp, "%d\n", steps);
         fclose(fp);
-        fp = fopen("/out/longest_arr.txt", "a+");
-        fprintf(fp, "%d\n",&count);
+        fp = fopen("out/longest_arr - bubblesort.txt", "a+");
+        fprintf(fp, "%d\n", count);
         fclose(fp);
         
         /* Print array with organized
