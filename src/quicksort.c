@@ -13,6 +13,12 @@ double r(){
     return (double)rand() / (double)RAND_MAX ;
 }
 
+void swap(int *a, int *b) {
+  int c = *a;
+  *a = *b;
+  *b = c;
+}
+
 // computes the length of the longest non-decreasing string
 //
 int LNDS(int n) {
@@ -59,14 +65,6 @@ void quickSort_errorless(int arr[], int low, int high) {
 		quickSort_errorless(arr, low, pi - 1); 
 		quickSort_errorless(arr, pi + 1, high); 
 	} 
-} 
-
-
-
-void swap(int *a, int *b) {
-  int c = *a;
-  *a = *b;
-  *b = c;
 }
  
 int partition(int A[], int p, int q) {
@@ -129,11 +127,11 @@ int main() {
 
 	quickSort_errorless(A,0,n-1);
 
-    FILE *fp = fopen("/out/steps.txt", "a+");
-    fprintf(fp, "%d\n",&steps);
+    FILE *fp = fopen("out/steps - quicksort.txt", "a+");
+    fprintf(fp, "%d\n", steps);
     fclose(fp);
-    fp = fopen("/out/longest_arr.txt", "a+");
-    fprintf(fp, "%d\n",&count);
+    fp = fopen("out/longest_arr - quicksort.txt", "a+");
+    fprintf(fp, "%d\n", count);
     fclose(fp);
     /*
 	printf("%d",B[0]);

@@ -3,7 +3,6 @@ from subprocess import call
 
 
 n = 20
-eps = 1.0/n
 maxr = n/2
 
 strings = ["./bubblesort", "./insertionsort", "./mergesort", "./quicksort"]
@@ -12,17 +11,20 @@ strings = ["./bubblesort", "./insertionsort", "./mergesort", "./quicksort"]
 # Error used to be 1.0/size of array
 # for i in range(10000):
 # j is for the size of array
-for j in range(10000):
-    f = open("data.in","w")
-    f.write(str(1.0/j) + " " + str(j))
-    for z in range(j):
-        f.write(" " + str(randint(z,maxr)))
-    f.write("\n")
-    f.close()
+# for j in range(10000):
+j = 1000
+eps = 1.0/j
+maxr = j/2
+f = open("data.in","w")
+f.write(str(eps) + " " + str(j))
+for z in range(j):
+    f.write(" " + str(randint(1,maxr)))
+f.write("\n")
+f.close()
 
-    f = open("out/size.txt","a+")
-    f.write(str(1.0/j) + " " + str(j))
-    f.write("\n")
-    f.close()
-    for z in range(4):
-        call([strings[z], "args", "< data.in"])
+f = open("out/size.txt","a+")
+f.write(str(eps) + " " + str(j))
+f.write("\n")
+f.close()
+for z in range(4):
+    call(strings[z] + " < data.in", shell = True)

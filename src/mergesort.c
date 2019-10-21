@@ -48,9 +48,9 @@ void merge_errorless (int *a, int n, int m) {
             }else{
                 if( a[j] < a[i]){
                     x[k] = a[j++];
-                    steps++;
                 }else{
                     x[k] = a[i++];
+                    steps += (i-k);
                 }
             }
         }               
@@ -136,11 +136,11 @@ int main() {
     merge_sort_errorless(A,n);
 
 
-    FILE *fp = fopen("/out/steps.txt", "a+");
-    fprintf(fp, "%d\n",&steps);
+    FILE *fp = fopen("out/steps - mergesort.txt", "a+");
+    fprintf(fp, "%d\n", steps);
     fclose(fp);
-    fp = fopen("/out/longest_arr.txt", "a+");
-    fprintf(fp, "%d\n",&count);
+    fp = fopen("out/longest_arr - mergesort.txt", "a+");
+    fprintf(fp, "%d\n", count);
     fclose(fp);
 
     /*printf("%d",B[0]);

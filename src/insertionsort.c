@@ -65,7 +65,8 @@ void insertion_sort_errorless(int *a, int n) {
 			--j;
             steps++;
 		}
-    a[j] = tmp;
+        a[j] = tmp;
+        steps++;
 	}
 }
 
@@ -104,11 +105,11 @@ int main() {
     insertion_sort_errorless(A,n);
 
 
-    FILE *fp = fopen("/out/steps.txt", "a+");
-    fprintf(fp, "%d\n",&steps);
+    FILE *fp = fopen("out/steps - insertionsort.txt", "a+");
+    fprintf(fp, "%d\n",steps);
     fclose(fp);
-    fp = fopen("/out/longest_arr.txt", "a+");
-    fprintf(fp, "%d\n",&count);
+    fp = fopen("out/longest_arr - insertionsort.txt", "a+");
+    fprintf(fp, "%d\n",count);
     fclose(fp);
     /*printf("%d",B[0]);
     for (i=1; i<n;i++)
