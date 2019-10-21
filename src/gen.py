@@ -66,7 +66,7 @@ for i in number_elements_test:
             f.write("\n")
             f.close()
             for z in range(4):
-                print("     Running Value range test: " + strings[z])
+                print("     Running number elements test: " + strings[z])
                 call(strings[z] + " < data.in", shell = True)
 
 for i in number_probability_test:
@@ -90,5 +90,5 @@ for i in number_probability_test:
             f.write("\n")
             f.close()
             for z in range(4):
-                print("     Running Value range test: " + strings[z])
+                print("     Running number probability test: " + strings[z])
                 call(strings[z] + " < data.in", shell = True)
