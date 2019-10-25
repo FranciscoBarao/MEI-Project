@@ -12,20 +12,20 @@ bubblesort_steps = readLines("out/steps - bubblesort.txt");
 mergesort_steps = readLines("out/steps - mergesort.txt");
 insertionsort_steps = readLines("out/steps - insertionsort.txt");
 
-q_longest = seq(1, 26, by=1)
-b_longest = seq(1, 26, by=1)
-m_longest = seq(1, 26, by=1)
-i_longest = seq(1, 26, by=1)
+q_longest = seq(1, 300, by=1)
+b_longest = seq(1, 300, by=1)
+m_longest = seq(1, 300, by=1)
+i_longest = seq(1, 300, by=1)
 
 
-q_steps = seq(1, 26, by=1)
-b_steps = seq(1, 26, by=1)
-m_steps = seq(1, 26, by=1)
-i_steps = seq(1, 26, by=1)
+q_steps = seq(1, 300, by=1)
+b_steps = seq(1, 300, by=1)
+m_steps = seq(1, 300, by=1)
+i_steps = seq(1, 300, by=1)
 
 count = 1
 min = 1
-max = 130
+max = 1500
 step = 5
 for(i in seq(min, max, by = step)){
 
