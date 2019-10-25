@@ -127,6 +127,7 @@ int main() {
 
 	quickSort_errorless(A,0,n-1);
 
+    /*
     FILE *fp = fopen("out/steps - quicksort.txt", "a+");
     fprintf(fp, "%d\n", steps);
     fclose(fp);

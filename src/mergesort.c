@@ -137,6 +137,7 @@ int main() {
     merge_sort_errorless(A,n);
 
 
+    /*
     FILE *fp = fopen("out/steps - mergesort.txt", "a+");
     fprintf(fp, "%d\n", steps);
     fclose(fp);

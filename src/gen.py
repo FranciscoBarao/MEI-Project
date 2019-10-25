@@ -5,6 +5,7 @@ import time
 strings = ["./bubblesort", "./insertionsort", "./mergesort", "./quicksort"]
 
 #Value Range testing
+#values 0.10 -- 
 value_range_test = [0.25, 0.5, 0.75, 1]
 number_elements_value_range_test = [2500, 7500]
 number_probability_value_range_test = [0.01, 0.0033]
@@ -20,6 +21,20 @@ number_probability_test = [0.04, 0.01, 0.0033, 0.002]
 number_elements_number_probability_test = [2500, 7500]
 value_range_number_probability_test = [0.25, 0.75]
 
+""" 
+Tests are in the following format:
+
+value_range_test = [0.25, 0.5, 0.75, 1]
+number_elements_value_range_test = [2500, 7500]
+
+0.25 - 2500|0.01   - 5x
+0.25 - 7500|0.0033 - 5x
+0.5 - 2500|0.01    - 5x
+0.5 - 7500|0.0033  - 5x
+...
+"""
+
+
 for i in value_range_test:
     for j in range(2):
         value_range = i
@@ -28,7 +43,7 @@ for i in value_range_test:
         probability = number_probability_value_range_test[j]
 
         f = open("out/size.txt","a+")
-        f.write(str(probability) + " " + str(elements))
+        f.write(str(value_range) + " " + str(probability) + " " + str(elements))
         f.write("\n")
         f.close()
         for k in range(5):
@@ -53,7 +68,7 @@ for i in number_elements_test:
         probability = number_probability_number_elements_test[j]
         
         f = open("out/size.txt","a+")
-        f.write(str(probability) + " " + str(elements))
+        f.write(str(value_range) + " " + str(probability) + " " + str(elements))
         f.write("\n")
         f.close()
         for k in range(5):
@@ -77,7 +92,7 @@ for i in number_probability_test:
         maxr = value_range * elements
         
         f = open("out/size.txt","a+")
-        f.write(str(probability) + " " + str(elements))
+        f.write(str(value_range) + " " + str(probability) + " " + str(elements))
         f.write("\n")
         f.close()
         for k in range(5):
