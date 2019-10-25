@@ -105,7 +105,7 @@ int main() {
     insertion_sort_errorless(A,n);
 
 
-    /*
+    
     FILE *fp = fopen("out/steps - insertionsort.txt", "a+");
     fprintf(fp, "%d\n",steps);
     fclose(fp);

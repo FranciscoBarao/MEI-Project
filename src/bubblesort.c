@@ -116,7 +116,7 @@ int main() {
 
         
 
-        /*FILE *fp = fopen("out/steps - bubblesort.txt", "a+");
+        FILE *fp = fopen("out/steps - bubblesort.txt", "a+");
         fprintf(fp, "%d\n", steps);
         fclose(fp);
         fp = fopen("out/longest_arr - bubblesort.txt", "a+");
