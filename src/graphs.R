@@ -172,7 +172,7 @@ number_probability_7500_0.75 = i_steps[20:2:26]
 
 
 # Testar Intervalos de valores em vez de fixos ou seja 
-# [0.25, 0.5, 0.75] passa a [0.1 : 0.0025 : 0.9] maybe?
+# [0.25, 0.5, 0.75] passa a [0.1 : 0.025 : 0.9] maybe?
 # [1000, 2500, 5000, 7500,10000] passa a [200 : 200 : 10000]
 # [0.04, 0.01, 0.0033, 0.002] passa a ..
 #
