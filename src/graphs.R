@@ -1,9 +1,12 @@
 library(tcltk)
-condition_array = readLines("out/size.txt");
-condition_array = strtoi(condition_array)
+value_range = readLines("out/value_range.txt");
+value_range = strtoi(value_range)
 
-print(condition_array)
+probability = readLines("out/probability.txt");
+probability = strtoi(probability)
 
+elements = readLines("out/elements.txt");
+elements = strtoi(elements)
 
 quicksort_longest = readLines("out/longest_arr - quicksort.txt");
 bubblesort_longest = readLines("out/longest_arr - bubblesort.txt");

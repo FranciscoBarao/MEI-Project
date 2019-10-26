@@ -48,8 +48,18 @@ for i in value_range_test:
         maxr = math.ceil(value_range * elements)
         probability = number_probability_value_range_test[j]
 
-        f = open("out/size.txt","a+")
-        f.write(str(value_range) + " " + str(probability) + " " + str(elements))
+        f = open("out/value_range.txt","a+")
+        f.write(str(value_range))
+        f.write("\n")
+        f.close()
+
+        f = open("out/probability.txt","a+")
+        f.write(str(probability))
+        f.write("\n")
+        f.close()
+
+        f = open("out/elements.txt","a+")
+        f.write( str(elements))
         f.write("\n")
         f.close()
         for k in range(5):
@@ -73,8 +83,18 @@ for i in number_elements_test:
         maxr = math.ceil(value_range * elements)
         probability = number_probability_number_elements_test[j]
         
-        f = open("out/size.txt","a+")
-        f.write(str(value_range) + " " + str(probability) + " " + str(elements))
+        f = open("out/value_range.txt","a+")
+        f.write(str(value_range))
+        f.write("\n")
+        f.close()
+
+        f = open("out/probability.txt","a+")
+        f.write(str(probability))
+        f.write("\n")
+        f.close()
+
+        f = open("out/elements.txt","a+")
+        f.write( str(elements))
         f.write("\n")
         f.close()
         for k in range(5):
@@ -97,8 +117,18 @@ for i in number_probability_test:
         value_range = value_range_number_probability_test[j]
         maxr = math.ceil(value_range * elements)
         
-        f = open("out/size.txt","a+")
-        f.write(str(value_range) + " " + str(probability) + " " + str(elements))
+        f = open("out/value_range.txt","a+")
+        f.write(str(value_range))
+        f.write("\n")
+        f.close()
+
+        f = open("out/probability.txt","a+")
+        f.write(str(probability))
+        f.write("\n")
+        f.close()
+
+        f = open("out/elements.txt","a+")
+        f.write( str(elements))
         f.write("\n")
         f.close()
         for k in range(5):
