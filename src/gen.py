@@ -56,7 +56,7 @@ for i in value_range_test:
             print("Run number: " + str(k))
             f = open("data.in","w")
             f.write(str(probability) + " " + str(elements))
-            time.sleep(1)
+            time.sleep(5)
             for z in range(elements):
                 f.write(" " + str(randint(1, maxr)))
             f.write("\n")
@@ -81,7 +81,7 @@ for i in number_elements_test:
             print("Run number: " + str(k))
             f = open("data.in","w")
             f.write(str(probability) + " " + str(elements))
-            time.sleep(1)
+            time.sleep(5)
             for z in range(int(elements)):
                 f.write(" " + str(randint(1, maxr)))
             f.write("\n")
@@ -105,7 +105,7 @@ for i in number_probability_test:
             print("Run number: " + str(k))
             f = open("data.in","w")
             f.write(str(probability) + " " + str(elements))
-            time.sleep(1)
+            time.sleep(5)
             for z in range(elements):
                 f.write(" " + str(randint(1, maxr)))
             f.write("\n")
