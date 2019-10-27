@@ -18,7 +18,7 @@ number_probability_value_range_test = [0.01, 0.0033]
 #number_elements_test = [1000, 2500, 5000, 7500, 10000]
 number_elements_test = np.linspace(200, 10000, num=50)
 value_range_number_elements_test = [0.25, 0.75]
-number_probability_number_elements_test = [0.01, 0.0033]
+number_probability_number_elements_test = [0.10, 0.033]
 
 #nProbability Testing
 # 1/25 1/100 1/300 1/500
@@ -40,7 +40,7 @@ number_elements_value_range_test = [2500, 7500]
 ...
 """
 
-
+"""
 for i in value_range_test:
     for j in range(2):
         value_range = round(i, 3)
@@ -74,7 +74,7 @@ for i in value_range_test:
             for z in range(4):
                 print("     Running Value range test: " + strings[z])
                 call(strings[z] + " < data.in", shell = True)
-
+"""
 
 for i in number_elements_test:
     for j in range(2):
@@ -110,6 +110,7 @@ for i in number_elements_test:
                 print("     Running number elements test: " + strings[z])
                 call(strings[z] + " < data.in", shell = True)
 
+"""
 for i in number_probability_test:
     for j in range(2):
         probability = round(i, 3)
@@ -143,3 +144,4 @@ for i in number_probability_test:
             for z in range(4):
                 print("     Running number probability test: " + strings[z])
                 call(strings[z] + " < data.in", shell = True)
+"""
