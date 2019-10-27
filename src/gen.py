@@ -76,9 +76,12 @@ for i in value_range_test:
                 call(strings[z] + " < data.in", shell = True)
 """
 
+print(number_elements_test)
+
 for i in number_elements_test:
     for j in range(2):
-        elements = i
+
+        elements = int(i)
         value_range = value_range_number_elements_test[j]
         maxr = math.ceil(value_range * elements)
         probability = number_probability_number_elements_test[j]
