@@ -164,7 +164,53 @@ for(i in seq(min, max, by = step)){
     count = count + 1
 }
 
+#Mean
+q_longest_impares_mean = mean(q_longest_impares)
+q_longest_pares_mean = mean(q_longest_pares)
+m_longest_impares_mean = mean(m_longest_impares)
+m_longest_pares_mean = mean(m_longest_pares)
+i_longest_impares_mean = mean(i_longest_impares)
+i_longest_pares_mean = mean(i_longest_pares)
+b_longest_impares_mean = mean(b_longest_impares)
+b_longest_pares_mean = mean(b_longest_pares)
 
+
+#Standard Deviation
+q_longest_impares_standard_deviation_test1 = sd(q_longest_impares[1:50])
+q_longest_impares_standard_deviation_test2 = sd(q_longest_impares[51:100])
+q_longest_impares_standard_deviation_test3 = sd(q_longest_impares[101:150])
+q_longest_pares_standard_deviation_test1 = sd(q_longest_pares[1:50])
+q_longest_pares_standard_deviation_test2 = sd(q_longest_pares[51:100])
+q_longest_pares_standard_deviation_test3 = sd(q_longest_pares[101:150])
+m_longest_impares_standard_deviation_test1 = sd(m_longest_impares[1:50])
+m_longest_impares_standard_deviation_test2 = sd(m_longest_impares[51:100])
+m_longest_impares_standard_deviation_test3 = sd(m_longest_impares[101:150])
+m_longest_pares_standard_deviation_test1 = sd(m_longest_pares[1:50])
+m_longest_pares_standard_deviation_test2 = sd(m_longest_pares[51:100])
+m_longest_pares_standard_deviation_test3 = sd(m_longest_pares[101:150])
+i_longest_impares_standard_deviation_test1 = sd(i_longest_impares[1:50])
+i_longest_impares_standard_deviation_test2 = sd(i_longest_impares[51:100])
+i_longest_impares_standard_deviation_test3 = sd(i_longest_impares[101:150])
+i_longest_pares_standard_deviation_test1 = sd(i_longest_pares[1:50])
+i_longest_pares_standard_deviation_test2 = sd(i_longest_pares[51:100])
+i_longest_pares_standard_deviation_test3 = sd(i_longest_pares[101:150])
+b_longest_impares_standard_deviation_test1 = sd(b_longest_impares[1:50])
+b_longest_impares_standard_deviation_test2 = sd(b_longest_impares[51:100])
+b_longest_impares_standard_deviation_test3 = sd(b_longest_impares[101:150])
+b_longest_pares_standard_deviation_test1 = sd(b_longest_pares[1:50])
+b_longest_pares_standard_deviation_test2 = sd(b_longest_pares[51:100])
+b_longest_pares_standard_deviation_test3 = sd(b_longest_pares[101:150])
+
+#Linear Regression
+x11()
+relation <- lm(q_steps_impares[1:50]~value_range_impares[1:50])
+plot(value_range_impares[1:50],q_steps_impares[1:50],col = "red",main = "Height & Weight Regression",cex = 1.3,pch = 16,xlab = "Weight in Kg",ylab = "Height in cm")
+abline(relation,lwd=2)
+summary(relation)
+
+prompt  <- "hit spacebar to close plots"
+extra   <- "some extra comment"
+capture <- tk_messageBox(type = c("ok"),message = prompt, detail = extra)
 
 #Quick Sort Testes Ímpares Graph - Value Range
 x11()
