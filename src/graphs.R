@@ -99,22 +99,24 @@ min = 1
 max = 300
 step = 2
 for(i in seq(min, max, by = step)){
-    q_longest_impares[count] <- (mean(q_longest[i])/elements[i])*100
-    print((mean(q_longest[i])/elements[i])*100)
+    number_elements_impar = elements[i]
+    number_elements_par = elements[i+1]
 
-    q_longest_pares[count] <- (mean(q_longest[i+1])/elements[i+1])*100
+    q_longest_impares[count] <- (mean(q_longest[i])/number_elements_impar)*100
 
-    b_longest_impares[count] <- (mean(b_longest[i])/elements[i])*100
+    q_longest_pares[count] <- (mean(q_longest[i+1])/number_elements_par)*100
 
-    b_longest_pares[count] <- (mean(b_longest[i+1])/elements[i+1])*100
+    b_longest_impares[count] <- (mean(b_longest[i])/number_elements_impar)*100
 
-    m_longest_impares[count] <- (mean(m_longest[i])/elements[i])*100
+    b_longest_pares[count] <- (mean(b_longest[i+1])/number_elements_par)*100
 
-    m_longest_pares[count] <- (mean(m_longest[i+1])/elements[i+1])*100
+    m_longest_impares[count] <- (mean(m_longest[i])/number_elements_impar)*100
 
-    i_longest_impares[count] <- (mean(i_longest[i])/elements[i])*100
+    m_longest_pares[count] <- (mean(m_longest[i+1])/number_elements_par)*100
 
-    i_longest_pares[count] <- (mean(i_longest[i+1])/elements[i+1])*100
+    i_longest_impares[count] <- (mean(i_longest[i])/number_elements_impar)*100
+
+    i_longest_pares[count] <- (mean(i_longest[i+1])/number_elements_par)*100
 
     count = count + 1
 }
@@ -169,21 +171,21 @@ for(i in seq(min, max, by = step)){
 
 #Quick Sort Testes Ímpares Graph - Value Range
 x11()
-plot((value_range_impares[1:50]*2500),q_longest_impares[1:50],main="QuickSort Value Range - 1 case", col = "red",xlab = "Random Number Range", ylab="Largest Subarray")
+plot((value_range_impares[1:50]*2500),q_longest_impares[1:50],main="QuickSort Value Range - 1 case", col = "red",xlab = "Random Number Range", ylab="Largest Subarray / Number of elements (%)")
 prompt  <- "hit spacebar to close plots"
 extra   <- "some extra comment"
 capture <- tk_messageBox(type = c("ok"),message = prompt, detail = extra)
 
 #Quick Sort Testes Pares Graph - Value Range
 x11()
-plot((value_range_pares[1:50]*7500),q_longest_pares[1:50],main="QuickSort Value Range - 2 case", col = "red",xlab = "Random Number Range", ylab="Largest Subarray")
+plot((value_range_pares[1:50]*7500),q_longest_pares[1:50],main="QuickSort Value Range - 2 case", col = "red",xlab = "Random Number Range", ylab="Largest Subarray / Number of elements (%)")
 prompt  <- "hit spacebar to close plots"
 extra   <- "some extra comment"
 capture <- tk_messageBox(type = c("ok"),message = prompt, detail = extra)
 
 #Quick Sort Testes Ímpares Graph - Number elements
 x11()
-plot(elements_impares[51:100],q_longest_impares[51:100],main="QuickSort Number Elements - 1 case", col = "red",xlab = "Number of Elements", ylab="Largest Subarray")
+plot(elements_impares[51:100],q_longest_impares[51:100],main="QuickSort Number Elements - 1 case", col = "red",xlab = "Number of Elements", ylab="Largest Subarray / Number of elements (%)")
 prompt  <- "hit spacebar to close plots"
 extra   <- "some extra comment"
 capture <- tk_messageBox(type = c("ok"),message = prompt, detail = extra)
@@ -191,21 +193,21 @@ capture <- tk_messageBox(type = c("ok"),message = prompt, detail = extra)
 
 #Quick Sort Testes Pares Graph - Number elements
 x11()
-plot(elements_pares[51:100],q_longest_pares[51:100],main="QuickSort Number Elements - 2 case", col = "red",xlab = "Number of Elements", ylab="Largest Subarray")
+plot(elements_pares[51:100],q_longest_pares[51:100],main="QuickSort Number Elements - 2 case", col = "red",xlab = "Number of Elements", ylab="Largest Subarray / Number of elements (%)")
 prompt  <- "hit spacebar to close plots"
 extra   <- "some extra comment"
 capture <- tk_messageBox(type = c("ok"),message = prompt, detail = extra)
 
 #Quick Sort Testes Ímpares Graph - Number probability
 x11()
-plot(probability_impares[101:150],q_longest_impares[101:150],main="QuickSort Error Probability - 1 case", col = "red",xlab = "Error Probability", ylab="Largest Subarray")
+plot(probability_impares[101:150],q_longest_impares[101:150],main="QuickSort Error Probability - 1 case", col = "red",xlab = "Error Probability", ylab="Largest Subarray / Number of elements (%)")
 prompt  <- "hit spacebar to close plots"
 extra   <- "some extra comment"
 capture <- tk_messageBox(type = c("ok"),message = prompt, detail = extra)
 
 #Quick Sort Testes Pares Graph - Number probability
 x11()
-plot(probability_pares[101:150],q_longest_pares[101:150],main="QuickSort Error Probability - 2 case", col = "red",xlab = "Error Probability", ylab="Largest Subarray")
+plot(probability_pares[101:150],q_longest_pares[101:150],main="QuickSort Error Probability - 2 case", col = "red",xlab = "Error Probability", ylab="Largest Subarray / Number of elements (%)")
 prompt  <- "hit spacebar to close plots"
 extra   <- "some extra comment"
 capture <- tk_messageBox(type = c("ok"),message = prompt, detail = extra)
@@ -254,42 +256,42 @@ capture <- tk_messageBox(type = c("ok"),message = prompt, detail = extra)
 
 #Merge Sort Testes Ímpares Graph - Value Range
 x11()
-plot((value_range_impares[1:50]*2500),m_longest_impares[1:50],main="Mergesort Value Range - 1 case", col = "red",xlab = "Random Number Range", ylab="Largest Subarray")
+plot((value_range_impares[1:50]*2500),m_longest_impares[1:50],main="Mergesort Value Range - 1 case", col = "red",xlab = "Random Number Range", ylab="Largest Subarray / Number of elements (%)")
 prompt  <- "hit spacebar to close plots"
 extra   <- "some extra comment"
 capture <- tk_messageBox(type = c("ok"),message = prompt, detail = extra)
 
 #Mergesort Testes Pares Graph - Value Range
 x11()
-plot((value_range_pares[1:50]*7500),m_longest_pares[1:50],main="Mergesort Value Range - 2 case", col = "red",xlab = "Random Number Range", ylab="Largest Subarray")
+plot((value_range_pares[1:50]*7500),m_longest_pares[1:50],main="Mergesort Value Range - 2 case", col = "red",xlab = "Random Number Range", ylab="Largest Subarray / Number of elements (%)")
 prompt  <- "hit spacebar to close plots"
 extra   <- "some extra comment"
 capture <- tk_messageBox(type = c("ok"),message = prompt, detail = extra)
 
 #Mergesort Testes Ímpares Graph - Number elements
 x11()
-plot(elements_impares[51:100],m_longest_impares[51:100],main="Mergesort Number Elements - 1 case", col = "red",xlab = "Number of Elements", ylab="Largest Subarray")
+plot(elements_impares[51:100],m_longest_impares[51:100],main="Mergesort Number Elements - 1 case", col = "red",xlab = "Number of Elements", ylab="Largest Subarray / Number of elements (%)")
 prompt  <- "hit spacebar to close plots"
 extra   <- "some extra comment"
 capture <- tk_messageBox(type = c("ok"),message = prompt, detail = extra)
 
 #Mergesort Testes Pares Graph - Number elements
 x11()
-plot(elements_pares[51:100],m_longest_pares[51:100],main="Mergesort Number Elements - 2 case", col = "red",xlab = "Number of Elements", ylab="Largest Subarray")
+plot(elements_pares[51:100],m_longest_pares[51:100],main="Mergesort Number Elements - 2 case", col = "red",xlab = "Number of Elements", ylab="Largest Subarray / Number of elements (%)")
 prompt  <- "hit spacebar to close plots"
 extra   <- "some extra comment"
 capture <- tk_messageBox(type = c("ok"),message = prompt, detail = extra)
 
 #Mergesort Testes Ímpares Graph - Number probability
 x11()
-plot(probability_impares[101:150],m_longest_impares[101:150],main="Mergesort Error Probability - 1 case", col = "red",xlab = "Error Probability", ylab="Largest Subarray")
+plot(probability_impares[101:150],m_longest_impares[101:150],main="Mergesort Error Probability - 1 case", col = "red",xlab = "Error Probability", ylab="Largest Subarray / Number of elements (%)")
 prompt  <- "hit spacebar to close plots"
 extra   <- "some extra comment"
 capture <- tk_messageBox(type = c("ok"),message = prompt, detail = extra)
 
 #Mergesort Testes Pares Graph - Number probability
 x11()
-plot(probability_pares[101:150],m_longest_pares[101:150],main="Mergesort Error Probability - 2 case", col = "red",xlab = "Error Probability", ylab="Largest Subarray")
+plot(probability_pares[101:150],m_longest_pares[101:150],main="Mergesort Error Probability - 2 case", col = "red",xlab = "Error Probability", ylab="Largest Subarray / Number of elements (%)")
 prompt  <- "hit spacebar to close plots"
 extra   <- "some extra comment"
 capture <- tk_messageBox(type = c("ok"),message = prompt, detail = extra)
@@ -338,42 +340,42 @@ capture <- tk_messageBox(type = c("ok"),message = prompt, detail = extra)
 
 #Insertionsort Testes Ímpares Graph - Value Range
 x11()
-plot((value_range_impares[1:50]*2500),i_longest_impares[1:50],main="Insertionsort Value Range - 1 case", col = "red",xlab = "Random Number Range", ylab="Largest Subarray")
+plot((value_range_impares[1:50]*2500),i_longest_impares[1:50],main="Insertionsort Value Range - 1 case", col = "red",xlab = "Random Number Range", ylab="Largest Subarray / Number of elements (%)")
 prompt  <- "hit spacebar to close plots"
 extra   <- "some extra comment"
 capture <- tk_messageBox(type = c("ok"),message = prompt, detail = extra)
 
 #Insertionsort Testes Pares Graph - Value Range
 x11()
-plot((value_range_pares[1:50]*7500),i_longest_pares[1:50],main="Insertionsort Value Range - 2 case", col = "red",xlab = "Random Number Range", ylab="Largest Subarray")
+plot((value_range_pares[1:50]*7500),i_longest_pares[1:50],main="Insertionsort Value Range - 2 case", col = "red",xlab = "Random Number Range", ylab="Largest Subarray / Number of elements (%)")
 prompt  <- "hit spacebar to close plots"
 extra   <- "some extra comment"
 capture <- tk_messageBox(type = c("ok"),message = prompt, detail = extra)
 
 #Insertionsort Testes Ímpares Graph - Number elements
 x11()
-plot(elements_impares[51:100],i_longest_impares[51:100],main="Insertionsort Number Elements - 1 case", col = "red",xlab = "Number of Elements", ylab="Largest Subarray")
+plot(elements_impares[51:100],i_longest_impares[51:100],main="Insertionsort Number Elements - 1 case", col = "red",xlab = "Number of Elements", ylab="Largest Subarray / Number of elements (%)")
 prompt  <- "hit spacebar to close plots"
 extra   <- "some extra comment"
 capture <- tk_messageBox(type = c("ok"),message = prompt, detail = extra)
 
 #Insertionsort Testes Pares Graph - Number elements
 x11()
-plot(elements_pares[51:100],i_longest_pares[51:100],main="Insertionsort Number Elements - 2 case", col = "red",xlab = "Number of Elements", ylab="Largest Subarray")
+plot(elements_pares[51:100],i_longest_pares[51:100],main="Insertionsort Number Elements - 2 case", col = "red",xlab = "Number of Elements", ylab="Largest Subarray / Number of elements (%)")
 prompt  <- "hit spacebar to close plots"
 extra   <- "some extra comment"
 capture <- tk_messageBox(type = c("ok"),message = prompt, detail = extra)
 
 #Insertionsort Testes Ímpares Graph - Number probability
 x11()
-plot(probability_impares[101:150],i_longest_impares[101:150],main="Insertionsort Error Probability - 1 case", col = "red",xlab = "Error Probability", ylab="Largest Subarray")
+plot(probability_impares[101:150],i_longest_impares[101:150],main="Insertionsort Error Probability - 1 case", col = "red",xlab = "Error Probability", ylab="Largest Subarray / Number of elements (%)")
 prompt  <- "hit spacebar to close plots"
 extra   <- "some extra comment"
 capture <- tk_messageBox(type = c("ok"),message = prompt, detail = extra)
 
 #Insertionsort Testes Pares Graph - Number probability
 x11()
-plot(probability_pares[101:150],i_longest_pares[101:150],main="Insertionsort Error Probability - 2 case", col = "red",xlab = "Error Probability", ylab="Largest Subarray")
+plot(probability_pares[101:150],i_longest_pares[101:150],main="Insertionsort Error Probability - 2 case", col = "red",xlab = "Error Probability", ylab="Largest Subarray / Number of elements (%)")
 prompt  <- "hit spacebar to close plots"
 extra   <- "some extra comment"
 capture <- tk_messageBox(type = c("ok"),message = prompt, detail = extra)
@@ -422,42 +424,42 @@ capture <- tk_messageBox(type = c("ok"),message = prompt, detail = extra)
 
 #Bubblesort Testes Ímpares Graph - Value Range
 x11()
-plot((value_range_impares[1:50]*2500),b_longest_impares[1:50],main="Bubblesort Value Range - 1 case", col = "red",xlab = "Random Number Range", ylab="Largest Subarray")
+plot((value_range_impares[1:50]*2500),b_longest_impares[1:50],main="Bubblesort Value Range - 1 case", col = "red",xlab = "Random Number Range", ylab="Largest Subarray / Number of elements (%)")
 prompt  <- "hit spacebar to close plots"
 extra   <- "some extra comment"
 capture <- tk_messageBox(type = c("ok"),message = prompt, detail = extra)
 
 #Bubblesort Testes Pares Graph - Value Range
 x11()
-plot((value_range_pares[1:50]*7500),b_longest_pares[1:50],main="Bubblesort Value Range - 2 case", col = "red",xlab = "Random Number Range", ylab="Largest Subarray")
+plot((value_range_pares[1:50]*7500),b_longest_pares[1:50],main="Bubblesort Value Range - 2 case", col = "red",xlab = "Random Number Range", ylab="Largest Subarray / Number of elements (%)")
 prompt  <- "hit spacebar to close plots"
 extra   <- "some extra comment"
 capture <- tk_messageBox(type = c("ok"),message = prompt, detail = extra)
 
 #Bubblesort Testes Ímpares Graph - Number elements
 x11()
-plot(elements_impares[51:100],b_longest_impares[51:100],main="Bubblesort Number Elements - 1 case", col = "red",xlab = "Number of Elements", ylab="Largest Subarray")
+plot(elements_impares[51:100],b_longest_impares[51:100],main="Bubblesort Number Elements - 1 case", col = "red",xlab = "Number of Elements", ylab="Largest Subarray / Number of elements (%)")
 prompt  <- "hit spacebar to close plots"
 extra   <- "some extra comment"
 capture <- tk_messageBox(type = c("ok"),message = prompt, detail = extra)
 
 #Bubblesort Testes Pares Graph - Number elements
 x11()
-plot(elements_pares[51:100],b_longest_pares[51:100],main="Bubblesort Number Elements - 2 case", col = "red",xlab = "Number of Elements", ylab="Largest Subarray")
+plot(elements_pares[51:100],b_longest_pares[51:100],main="Bubblesort Number Elements - 2 case", col = "red",xlab = "Number of Elements", ylab="Largest Subarray / Number of elements (%)")
 prompt  <- "hit spacebar to close plots"
 extra   <- "some extra comment"
 capture <- tk_messageBox(type = c("ok"),message = prompt, detail = extra)
 
 #Bubblesort Testes Ímpares Graph - Number probability
 x11()
-plot(probability_impares[101:150],b_longest_impares[101:150],main="Bubblesort Error Probability - 1 case", col = "red",xlab = "Error Probability", ylab="Largest Subarray")
+plot(probability_impares[101:150],b_longest_impares[101:150],main="Bubblesort Error Probability - 1 case", col = "red",xlab = "Error Probability", ylab="Largest Subarray / Number of elements (%)")
 prompt  <- "hit spacebar to close plots"
 extra   <- "some extra comment"
 capture <- tk_messageBox(type = c("ok"),message = prompt, detail = extra)
 
 #Bubblesort Testes Pares Graph - Number probability
 x11()
-plot(probability_pares[101:150],b_longest_pares[101:150],main="Bubblesort Error Probability - 2 case", col = "red",xlab = "Error Probability", ylab="Largest Subarray")
+plot(probability_pares[101:150],b_longest_pares[101:150],main="Bubblesort Error Probability - 2 case", col = "red",xlab = "Error Probability", ylab="Largest Subarray / Number of elements (%)")
 prompt  <- "hit spacebar to close plots"
 extra   <- "some extra comment"
 capture <- tk_messageBox(type = c("ok"),message = prompt, detail = extra)
