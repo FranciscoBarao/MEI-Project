@@ -40,7 +40,7 @@ number_elements_value_range_test = [2500, 7500]
 ...
 """
 
-"""
+
 for i in value_range_test:
     for j in range(2):
         value_range = round(i, 3)
@@ -66,7 +66,7 @@ for i in value_range_test:
             print("Run number: " + str(k))
             f = open("data.in","w")
             f.write(str(probability) + " " + str(elements))
-            time.sleep(5)
+            time.sleep(1)
             for z in range(elements):
                 f.write(" " + str(randint(1, maxr)))
             f.write("\n")
@@ -74,9 +74,7 @@ for i in value_range_test:
             for z in range(4):
                 print("     Running Value range test: " + strings[z])
                 call(strings[z] + " < data.in", shell = True)
-"""
 
-print(number_elements_test)
 
 for i in number_elements_test:
     for j in range(2):
@@ -104,7 +102,7 @@ for i in number_elements_test:
             print("Run number: " + str(k))
             f = open("data.in","w")
             f.write(str(probability) + " " + str(elements))
-            time.sleep(5)
+            time.sleep(1)
             for z in range(int(elements)):
                 f.write(" " + str(randint(1, maxr)))
             f.write("\n")
@@ -113,7 +111,6 @@ for i in number_elements_test:
                 print("     Running number elements test: " + strings[z])
                 call(strings[z] + " < data.in", shell = True)
 
-"""
 for i in number_probability_test:
     for j in range(2):
         probability = round(i, 3)
@@ -139,7 +136,7 @@ for i in number_probability_test:
             print("Run number: " + str(k))
             f = open("data.in","w")
             f.write(str(probability) + " " + str(elements))
-            time.sleep(5)
+            time.sleep(1)
             for z in range(elements):
                 f.write(" " + str(randint(1, maxr)))
             f.write("\n")
@@ -147,4 +144,3 @@ for i in number_probability_test:
             for z in range(4):
                 print("     Running number probability test: " + strings[z])
                 call(strings[z] + " < data.in", shell = True)
-"""
