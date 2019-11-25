@@ -5,7 +5,7 @@ algorithms = 4
 value_range = 3
 maintests = 50
 subtests = 10
-loops = 2
+loops = 1
 repetitions = 5
 
 tests = value_range * maintests * subtests * loops
