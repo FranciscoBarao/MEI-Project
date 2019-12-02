@@ -57,7 +57,7 @@ for algorithm in strings:
 
                 for k in range(5):
                     f = open("data.in","w")
-                    time.sleep(2)
+                    time.sleep(1)
                     f.write(str(probability) + " " + str(elements) + "\n")
                     for z in range(elements):
                         f.write(" " + str(randint(1, maxr)))
