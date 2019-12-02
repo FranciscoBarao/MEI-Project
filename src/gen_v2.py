@@ -38,6 +38,7 @@ for algorithm in strings:
     for value_range in number_value_range:
         for probability in number_probability:
             for elements in number_element:
+                elements = int(elements)
                 maxr = math.ceil(value_range * elements)
                 f = open("out/value_range.txt","a+")
                 f.write(str(value_range))
@@ -50,15 +51,15 @@ for algorithm in strings:
                 f.close()
 
                 f = open("out/elements.txt","a+")
-                f.write( str(elements))
+                f.write(str(int(elements)))
                 f.write("\n")
                 f.close()
 
                 for k in range(5):
                     f = open("data.in","w")
                     time.sleep(2)
-                    f.write(str(probability) + " " + str(elements))
-                    for z in range(int(elements)):
+                    f.write(str(probability) + " " + str(elements) + "\n")
+                    for z in range(elements):
                         f.write(" " + str(randint(1, maxr)))
                     f.write("\n")
                     f.close()
