@@ -1,24 +1,68 @@
+# Algorithm | Prob error | nSteps/Longest
+# Quicksort      0.04          x
+# Quicksort      0.05          y
+# Quicksort      0.002         z
+# Bubblesort     0.04          x
 
-#exercicio 5.1
-D = read.table(file = "data.in",header = TRUE)
-boxplot(D$Bugs~D$Team,data = D)
-boxplot(D$Bugs~D$Method,data = D)
-interaction.plot(D$Team, D$Method,D$Bugs)
-aov.out = aov(D$Bugs~D$Team*D$Method, data = D)
-#Avaliar F e P.. verufucar se se rejeita HoAB
-summary(aov.out)
+#Two Way Anova
+#Independent variables - Probability of error && Algorithm 
+T = read.table(file = "data.in",header = TRUE)
 
-#Check Assumption
-qqnorm(aov.out$res)
-qqline(aov.out$res)
+#Number of Steps
+boxplot(T$nSteps~T$Algorithm, data = T)
+boxplot(T$nSteps~T$ProbError, data = T)
+interaction.plot(T$Algorithm, T$ProbError,T$nSteps)
 
-shapiro.test(aov.out$res)
+#Longest of Subarray
+boxplot(T$Longest~T$Algorithm, data = T)
+boxplot(T$Longest~T$ProbError, data = T)
+interaction.plot(T$Algorithm, T$ProbError,T$Longest)
 
-bartlett.test(D$Bugs~D$Team)
-bartlett.test(D$Bugs~D$Method)
-bartlett.test(D$Bugs~interaction(D$Team,D$Method),data = D)
+#Anova Table - Number of steps
+nSteps.aov.out = aov(T$nSteps~T$Algorithm*T$ProbError, data = T)
+summary(nSteps.aov.out)
+
+#Anova Table - Longest subarray
+longest.aov.out = aov(T$Longest~T$Algorithm*T$ProbError, data = T)
+summary(longest.aov.out)
 
 
-#Post Hoc - Compare means
-t = TukeyHSD(aov.out,alternative = "two.sided")
-print(t)
+#Reject HoAB -> Check Assumptions - Number of Steps 
+#Normality of residuals 
+qqnorm(nSteps.aov.out$res)
+qqline(nSteps.aov.out$res)
+
+shapiro.test(nSteps.aov.out$res)
+#We assume normality if w is big
+
+#Test Homogeneity of Variances
+bartlett.test(T$nSteps~T$Algorithm)
+bartlett.test(T$nSteps~T$ProbError)
+bartlett.test(T$nSteps~interaction(T$Algorithm,T$ProbError), data = T)
+#We assume that variances are similar
+
+
+#Reject HoAB -> Check Assumptions - Longest subarray
+#Normality of residuals 
+qqnorm(longest.aov.out$res)
+qqline(longest.aov.out$res)
+
+shapiro.test(longest.aov.out$res)
+#We assume normality if w is big
+
+#Test Homogeneity of Variances
+bartlett.test(T$Longest~T$Algorithm)
+bartlett.test(T$Longest~T$ProbError)
+bartlett.test(T$Longest~interaction(T$Algorithm,T$ProbError), data = T)
+#We assume that variances are similar
+
+
+
+
+#Post Hoc - Number of Steps
+THSD_nSteps = TukeyHSD(nSteps.aov.out, alternative = "two.sided")
+print(THSD_nSteps)
+#Post Hoc - Longest Subarray
+THSD_longest = TukeyHSD(longest.aov.out, alternative = "two.sided")
+print(THSD_longest)
+
