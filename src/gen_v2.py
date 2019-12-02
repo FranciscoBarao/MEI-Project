@@ -11,12 +11,12 @@ strings = ["./quicksort", "./bubblesort", "./mergesort", "./insertionsort"]
 
 #nElement Testing
 #number_elements_test = [1000, 2500, 5000, 7500, 10000]
-number_element = np.linspace(200, 10000, num=50)
+number_element = np.linspace(500, 10000, num=20)
 
 #nProbability Testing
 # 1/25 1/100 1/300 1/500
 # number_probability_test = [0.04, 0.01, 0.0033, 0.002]
-number_probability = np.linspace(0.002, 0.04, num=10)
+number_probability = np.linspace(0.002, 0.04, num=5)
 
 number_value_range = [0.25, 0.50, 0.75]
 
@@ -38,6 +38,7 @@ for algorithm in strings:
     for value_range in number_value_range:
         for probability in number_probability:
             for elements in number_element:
+                elements = int(elements)
                 maxr = math.ceil(value_range * elements)
                 f = open("out/value_range.txt","a+")
                 f.write(str(value_range))
@@ -50,17 +51,17 @@ for algorithm in strings:
                 f.close()
 
                 f = open("out/elements.txt","a+")
-                f.write( str(elements))
+                f.write(str(int(elements)))
                 f.write("\n")
                 f.close()
 
                 for k in range(5):
                     f = open("data.in","w")
-                    f.write(str(probability) + " " + str(elements))
                     time.sleep(2)
-                    for z in range(int(elements)):
+                    f.write(str(probability) + " " + str(elements) + "\n")
+                    for z in range(elements):
                         f.write(" " + str(randint(1, maxr)))
                     f.write("\n")
                     f.close()
-                    print("     Running test: " + str(k) + "/5")
+                    print("     Running test: " + str(k+1) + "/5")
                     call(algorithm + " < data.in", shell = True)
