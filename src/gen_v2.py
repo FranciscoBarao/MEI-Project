@@ -11,12 +11,12 @@ strings = ["./quicksort", "./bubblesort", "./mergesort", "./insertionsort"]
 
 #nElement Testing
 #number_elements_test = [1000, 2500, 5000, 7500, 10000]
-number_element = np.linspace(200, 10000, num=50)
+number_element = np.linspace(500, 10000, num=20)
 
 #nProbability Testing
 # 1/25 1/100 1/300 1/500
 # number_probability_test = [0.04, 0.01, 0.0033, 0.002]
-number_probability = np.linspace(0.002, 0.04, num=10)
+number_probability = np.linspace(0.002, 0.04, num=5)
 
 number_value_range = [0.25, 0.50, 0.75]
 

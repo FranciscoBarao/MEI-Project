@@ -3,8 +3,8 @@ library(tcltk)
 # Values
 algorithms = 4
 value_range = 3
-maintests = 50
-subtests = 10
+maintests = 20
+subtests = 5
 loops = 1
 repetitions = 5
 
