@@ -34,7 +34,7 @@ number_elements_value_range_test = [2500, 7500]
 """
 
 for algorithm in strings:
-    print("     Running tests for: " + algorithm)
+    print("Running tests for: " + algorithm)
     for value_range in number_value_range:
         for probability in number_probability:
             for elements in number_element:
@@ -55,7 +55,6 @@ for algorithm in strings:
                 f.close()
 
                 for k in range(5):
-                    print("Run number: " + str(k))
                     f = open("data.in","w")
                     f.write(str(probability) + " " + str(elements))
                     time.sleep(2)
