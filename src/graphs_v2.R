@@ -171,22 +171,30 @@ for(test in seq(1, vr_tests)){
 write("Algorithm ProbError nSteps Longest", file = "data.out", append = FALSE)
 prob_index = 1
 for(i in seq(1, 5)){
-    write(paste("Quicksort", probability[prob_index]), file = "data.out", append = TRUE)
+    for(j in seq(1, 20)){
+        write(paste("Quicksort", probability[prob_index], q_steps[j], q_longest[j], sep=" "), file = "data.out", append = TRUE)
+    }
     prob_index = prob_index + 20
 }
 prob_index = 1
 for(i in seq(1, 5)){
-    write(paste("Bubblesort", probability[prob_index]), file = "data.out", append = TRUE)
+    for(j in seq(1, 20)){
+        write(paste("Bubblesort", probability[prob_index], b_steps[j], b_longest[j], sep=" "), file = "data.out", append = TRUE)
+    }
     prob_index = prob_index + 20
 }
 prob_index = 1
 for(i in seq(1, 5)){
-    write(paste("Mergesort", probability[prob_index]), file = "data.out", append = TRUE)
+    for(j in seq(1, 20)){
+        write(paste("Mergesort", probability[prob_index], m_steps[j], m_longest[j], sep=" "), file = "data.out", append = TRUE)
+    }
     prob_index = prob_index + 20
 }
 prob_index = 1
 for(i in seq(1, 5)){
-    write(paste("Insertionsort", probability[prob_index]), file = "data.out", append = TRUE)
+    for(j in seq(1, 20)){
+        write(paste("Insertionsort", probability[prob_index], i_steps[j], i_longest[j], sep=" "), file = "data.out", append = TRUE)
+    }
     prob_index = prob_index + 20
 }
 

@@ -6,7 +6,7 @@
 
 #Two Way Anova
 #Independent variables - Probability of error && Algorithm 
-T = read.table(file = "data.in",header = TRUE)
+T = read.table(file = "data.out",header = TRUE)
 
 #Number of Steps
 boxplot(T$nSteps~T$Algorithm, data = T)
