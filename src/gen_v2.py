@@ -56,11 +56,11 @@ for algorithm in strings:
 
                 for k in range(5):
                     f = open("data.in","w")
-                    f.write(str(probability) + " " + str(elements))
                     time.sleep(2)
+                    f.write(str(probability) + " " + str(elements))
                     for z in range(int(elements)):
                         f.write(" " + str(randint(1, maxr)))
                     f.write("\n")
                     f.close()
-                    print("     Running test: " + str(k) + "/5")
+                    print("     Running test: " + str(k+1) + "/5")
                     call(algorithm + " < data.in", shell = True)
