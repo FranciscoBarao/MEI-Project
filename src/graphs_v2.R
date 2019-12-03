@@ -182,39 +182,47 @@ print(q_steps)
 write("Algorithm ProbError nSteps Longest", file = "data.out", append = FALSE)
 prob_index = 1
 index = 1
-for(i in seq(1, 5)){
-    for(j in seq(1, 20)){
-        write(paste("Quicksort", probability[prob_index], q_steps[index], q_longest[index], sep=" "), file = "data.out", append = TRUE)
-        index = index + 1
+for(value in seq(1, vr_tests)){
+    for(i in seq(1, subtests)){
+        for(j in seq(1, maintests)){
+            write(paste("Quicksort", probability[prob_index], q_steps[index], q_longest[index], sep=" "), file = "data.out", append = TRUE)
+            index = index + 1
+        }
+        prob_index = prob_index + maintests
     }
-    prob_index = prob_index + 20
 }
 prob_index = 1
 index = 1
-for(i in seq(1, 5)){
-    for(j in seq(1, 20)){
-        write(paste("Bubblesort", probability[prob_index], b_steps[index], b_longest[index], sep=" "), file = "data.out", append = TRUE)
-        index = index + 1
+for(value in seq(1, vr_tests)){
+    for(i in seq(1, subtests)){
+        for(j in seq(1, maintests)){
+            write(paste("Bubblesort", probability[prob_index], b_steps[index], b_longest[index], sep=" "), file = "data.out", append = TRUE)
+            index = index + 1
+        }
+        prob_index = prob_index + maintests
     }
-    prob_index = prob_index + 20
 }
 prob_index = 1
 index = 1
-for(i in seq(1, 5)){
-    for(j in seq(1, 20)){
-        write(paste("Mergesort", probability[prob_index], m_steps[index], m_longest[index], sep=" "), file = "data.out", append = TRUE)
-        index = index + 1
+for(value in seq(1, vr_tests)){
+    for(i in seq(1, subtests)){
+        for(j in seq(1, maintests)){
+            write(paste("Mergesort", probability[prob_index], m_steps[index], m_longest[index], sep=" "), file = "data.out", append = TRUE)
+            index = index + 1
+        }
+        prob_index = prob_index + maintests
     }
-    prob_index = prob_index + 20
 }
 prob_index = 1
 index = 1
-for(i in seq(1, 5)){
-    for(j in seq(1, 20)){
-        write(paste("Insertionsort", probability[prob_index], i_steps[index], i_longest[index], sep=" "), file = "data.out", append = TRUE)
-        index = index + 1
+for(value in seq(1, vr_tests)){
+    for(i in seq(1, subtests)){
+        for(j in seq(1, maintests)){
+            write(paste("Insertionsort", probability[prob_index], i_steps[index], i_longest[index], sep=" "), file = "data.out", append = TRUE)
+            index = index + 1
+        }
+        prob_index = prob_index + maintests
     }
-    prob_index = prob_index + 20
 }
 
 prompt  <- "hit spacebar to close plots"
