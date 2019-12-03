@@ -7,6 +7,8 @@ maintests = 20
 subtests = 5
 loops = 1
 repetitions = 5
+yMaxLim = 260000
+yMaxLim2 = 100
 
 tests = vr_tests * maintests * subtests * loops
 
@@ -59,7 +61,7 @@ for(loop in seq(1, loops)){
                 b_longest[count] = (mean(bubblesort_longest[index : (index + repetitions-1)])/elements[count])*100
                 m_longest[count] = (mean(mergesort_longest[index : (index + repetitions-1)])/elements[count])*100
                 i_longest[count] = (mean(insertionsort_longest[index : (index + repetitions-1)])/elements[count])*100
-
+            
                 q_steps[count] = mean(quicksort_steps[index : (index + repetitions-1)])
                 b_steps[count] = mean(bubblesort_steps[index : (index + repetitions-1)])
                 m_steps[count] = mean(mergesort_steps[index : (index + repetitions-1)])
@@ -75,7 +77,7 @@ for(loop in seq(1, loops)){
 index = 1
 for(test in seq(1, vr_tests)){
     x11()
-    plot(NULL, xlim=c(0,10000), ylim=c(0,100), main=paste("QuickSort - Value Range", test, sep=" "), xlab = "Number of elements", ylab="Largest Subarray / Number of elements (%)")
+    plot(NULL, xlim=c(0,10000), ylim=c(0,yMaxLim2), main=paste("QuickSort - Value Range", test, sep=" "), xlab = "Number of elements", ylab="Largest Subarray / Number of elements (%)")
     color = 0
     for(i in seq(1, maintests*subtests, by=maintests)){
         variable = i*1
@@ -88,7 +90,7 @@ for(test in seq(1, vr_tests)){
 index = 1
 for(test in seq(1, vr_tests)){
     x11()
-    plot(NULL, xlim=c(0,10000), ylim=c(0,100), main=paste("BubbleSort - Value Range", test, sep=" "), xlab = "Number of elements", ylab="Largest Subarray / Number of elements (%)")
+    plot(NULL, xlim=c(0,10000), ylim=c(0,yMaxLim2), main=paste("BubbleSort - Value Range", test, sep=" "), xlab = "Number of elements", ylab="Largest Subarray / Number of elements (%)")
     color = 0
     for(i in seq(1, maintests*subtests, by=maintests)){
         variable = i*2
@@ -101,7 +103,7 @@ for(test in seq(1, vr_tests)){
 index = 1
 for(test in seq(1, vr_tests)){
     x11()
-    plot(NULL, xlim=c(0,10000), ylim=c(0,100), main=paste("MergeSort - Value Range", test, sep=" "), xlab = "Number of elements", ylab="Largest Subarray / Number of elements (%)")
+    plot(NULL, xlim=c(0,10000), ylim=c(0,yMaxLim2), main=paste("MergeSort - Value Range", test, sep=" "), xlab = "Number of elements", ylab="Largest Subarray / Number of elements (%)")
     color = 0
     for(i in seq(1, maintests*subtests, by=maintests)){
         variable = i*3
@@ -114,7 +116,7 @@ for(test in seq(1, vr_tests)){
 index = 1
 for(test in seq(1, vr_tests)){
     x11()
-    plot(NULL, xlim=c(0,10000), ylim=c(0,100), main=paste("InsertionSort - Value Range", test, sep=" "), xlab = "Number of elements", ylab="Largest Subarray / Number of elements (%)")
+    plot(NULL, xlim=c(0,10000), ylim=c(0,yMaxLim2), main=paste("InsertionSort - Value Range", test, sep=" "), xlab = "Number of elements", ylab="Largest Subarray / Number of elements (%)")
     color = 0
     for(i in seq(1, maintests*subtests, by=maintests)){
         variable = i*4
@@ -127,7 +129,7 @@ for(test in seq(1, vr_tests)){
 index = 1
 for(test in seq(1, vr_tests)){
     x11()
-    plot(NULL, xlim=c(0,10000), ylim=c(0,26000000), main=paste("QuickSort - Value Range", test, sep=" "), xlab = "Number of elements", ylab="Number of swaps")
+    plot(NULL, xlim=c(0,10000), ylim=c(0,yMaxLim), main=paste("QuickSort - Value Range", test, sep=" "), xlab = "Number of elements", ylab="Number of swaps")
     color = 0
     for(i in seq(1, maintests*subtests, by=maintests)){
         variable = i*1
@@ -140,7 +142,7 @@ for(test in seq(1, vr_tests)){
 index = 1
 for(test in seq(1, vr_tests)){
     x11()
-    plot(NULL, xlim=c(0,10000), ylim=c(0,26000000), main=paste("BubbleSort - Value Range", test, sep=" "), xlab = "Number of elements", ylab="Number of swaps")
+    plot(NULL, xlim=c(0,10000), ylim=c(0,yMaxLim), main=paste("BubbleSort - Value Range", test, sep=" "), xlab = "Number of elements", ylab="Number of swaps")
     color = 0
     for(i in seq(1, maintests*subtests, by=maintests)){
         variable = i*2
@@ -153,7 +155,7 @@ for(test in seq(1, vr_tests)){
 index = 1
 for(test in seq(1, vr_tests)){
     x11()
-    plot(NULL, xlim=c(0,10000), ylim=c(0,26000000), main=paste("MergeSort - Value Range", test, sep=" "), xlab = "Number of elements", ylab="Number of swaps")
+    plot(NULL, xlim=c(0,10000), ylim=c(0,yMaxLim), main=paste("MergeSort - Value Range", test, sep=" "), xlab = "Number of elements", ylab="Number of swaps")
     color = 0
     for(i in seq(1, maintests*subtests, by=maintests)){
         variable = i*3
@@ -166,7 +168,7 @@ for(test in seq(1, vr_tests)){
 index = 1
 for(test in seq(1, vr_tests)){
     x11()
-    plot(NULL, xlim=c(0,10000), ylim=c(0,26000000), main=paste("InsertionSort - Value Range", test, sep=" "), xlab = "Number of elements", ylab="Number of swaps")
+    plot(NULL, xlim=c(0,10000), ylim=c(0,yMaxLim), main=paste("InsertionSort - Value Range", test, sep=" "), xlab = "Number of elements", ylab="Number of swaps")
     color = 0
     for(i in seq(1, maintests*subtests, by=maintests)){
         variable = i*4
@@ -176,6 +178,7 @@ for(test in seq(1, vr_tests)){
     }
 }
 
+print(q_steps)
 write("Algorithm ProbError nSteps Longest", file = "data.out", append = FALSE)
 prob_index = 1
 index = 1

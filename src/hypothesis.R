@@ -7,16 +7,16 @@
 #Two Way Anova
 #Independent variables - Probability of error && Algorithm 
 T = read.table(file = "data.out",header = TRUE)
-
-#Number of Steps
+T$ProbError = as.factor(T$ProbError)
+#Number of Stes
 boxplot(T$nSteps~T$Algorithm, data = T)
 boxplot(T$nSteps~T$ProbError, data = T)
-interaction.plot(T$Algorithm, T$ProbError,T$nSteps)
+interaction.plot(T$Algorithm, T$ProbError, T$nSteps)
 
 #Longest of Subarray
 boxplot(T$Longest~T$Algorithm, data = T)
 boxplot(T$Longest~T$ProbError, data = T)
-interaction.plot(T$Algorithm, T$ProbError,T$Longest)
+interaction.plot(T$Algorithm, T$ProbError, T$Longest)
 
 #Anova Table - Number of steps
 nSteps.aov.out = aov(T$nSteps~T$Algorithm*T$ProbError, data = T)
