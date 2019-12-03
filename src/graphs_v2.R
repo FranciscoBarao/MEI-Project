@@ -8,7 +8,7 @@ subtests = 5
 loops = 1
 repetitions = 5
 yMaxLim = 260000
-yMaxLim2 = 100
+yMaxLim2 = 20
 
 tests = vr_tests * maintests * subtests * loops
 
