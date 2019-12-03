@@ -74,98 +74,106 @@ for(loop in seq(1, loops)){
     }
 }
 
+index = 1
 for(test in seq(1, vr_tests)){
     x11()
     plot(NULL, xlim=c(0,10000), ylim=c(0,yMaxLim2), main=paste("QuickSort - Value Range", test, sep=" "), xlab = "Number of elements", ylab="Largest Subarray / Number of elements (%)")
     color = 0
     for(i in seq(1, maintests*subtests, by=maintests)){
-        index = i
         variable = i*1
         points(elements[variable:(variable+maintests-1)], q_longest[index:(index+maintests-1)], col=colors[color])
+        index = index + maintests
         color = color + 1
     }
 }
 
+index = 1
 for(test in seq(1, vr_tests)){
     x11()
     plot(NULL, xlim=c(0,10000), ylim=c(0,yMaxLim2), main=paste("BubbleSort - Value Range", test, sep=" "), xlab = "Number of elements", ylab="Largest Subarray / Number of elements (%)")
     color = 0
     for(i in seq(1, maintests*subtests, by=maintests)){
-        index = i
         variable = i*2
         points(elements[variable:(variable+maintests-1)], b_longest[index:(index+maintests-1)], col=colors[color])
+        index = index + maintests
         color = color + 1
     }
 }
 
+index = 1
 for(test in seq(1, vr_tests)){
     x11()
     plot(NULL, xlim=c(0,10000), ylim=c(0,yMaxLim2), main=paste("MergeSort - Value Range", test, sep=" "), xlab = "Number of elements", ylab="Largest Subarray / Number of elements (%)")
     color = 0
     for(i in seq(1, maintests*subtests, by=maintests)){
-        index = i
         variable = i*3
         points(elements[variable:(variable+maintests-1)], m_longest[index:(index+maintests-1)], col=colors[color])
+        index = index + maintests
         color = color + 1
     }
 }
 
+index = 1
 for(test in seq(1, vr_tests)){
     x11()
     plot(NULL, xlim=c(0,10000), ylim=c(0,yMaxLim2), main=paste("InsertionSort - Value Range", test, sep=" "), xlab = "Number of elements", ylab="Largest Subarray / Number of elements (%)")
     color = 0
     for(i in seq(1, maintests*subtests, by=maintests)){
-        index = i
         variable = i*4
         points(elements[variable:(variable+maintests-1)], i_longest[index:(index+maintests-1)], col=colors[color])
+        index = index + maintests
         color = color + 1
     }
 }
 
+index = 1
 for(test in seq(1, vr_tests)){
     x11()
     plot(NULL, xlim=c(0,10000), ylim=c(0,yMaxLim), main=paste("QuickSort - Value Range", test, sep=" "), xlab = "Number of elements", ylab="Number of swaps")
     color = 0
     for(i in seq(1, maintests*subtests, by=maintests)){
-        index = i
         variable = i*1
         points(elements[variable:(variable+maintests-1)], q_steps[index:(index+maintests-1)], col=colors[color])
+        index = index + maintests
         color = color + 1
     }
 }
 
+index = 1
 for(test in seq(1, vr_tests)){
     x11()
     plot(NULL, xlim=c(0,10000), ylim=c(0,yMaxLim), main=paste("BubbleSort - Value Range", test, sep=" "), xlab = "Number of elements", ylab="Number of swaps")
     color = 0
     for(i in seq(1, maintests*subtests, by=maintests)){
-        index = i
         variable = i*2
         points(elements[variable:(variable+maintests-1)], b_steps[index:(index+maintests-1)], col=colors[color])
+        index = index + maintests
         color = color + 1
     }
 }
 
+index = 1
 for(test in seq(1, vr_tests)){
     x11()
     plot(NULL, xlim=c(0,10000), ylim=c(0,yMaxLim), main=paste("MergeSort - Value Range", test, sep=" "), xlab = "Number of elements", ylab="Number of swaps")
     color = 0
     for(i in seq(1, maintests*subtests, by=maintests)){
-        index = i
         variable = i*3
         points(elements[variable:(variable+maintests-1)], m_steps[index:(index+maintests-1)], col=colors[color])
+        index = index + maintests
         color = color + 1
     }
 }
 
+index = 1
 for(test in seq(1, vr_tests)){
     x11()
     plot(NULL, xlim=c(0,10000), ylim=c(0,yMaxLim), main=paste("InsertionSort - Value Range", test, sep=" "), xlab = "Number of elements", ylab="Number of swaps")
     color = 0
     for(i in seq(1, maintests*subtests, by=maintests)){
-        index = i
         variable = i*4
         points(elements[variable:(variable+maintests-1)], i_steps[index:(index+maintests-1)], col=colors[color])
+        index = index + maintests
         color = color + 1
     }
 }
@@ -173,30 +181,38 @@ for(test in seq(1, vr_tests)){
 print(q_steps)
 write("Algorithm ProbError nSteps Longest", file = "data.out", append = FALSE)
 prob_index = 1
+index = 1
 for(i in seq(1, 5)){
     for(j in seq(1, 20)){
-        write(paste("Quicksort", probability[prob_index], q_steps[j], q_longest[j], sep=" "), file = "data.out", append = TRUE)
+        write(paste("Quicksort", probability[prob_index], q_steps[index], q_longest[index], sep=" "), file = "data.out", append = TRUE)
+        index = index + 1
     }
     prob_index = prob_index + 20
 }
 prob_index = 1
+index = 1
 for(i in seq(1, 5)){
     for(j in seq(1, 20)){
-        write(paste("Bubblesort", probability[prob_index], b_steps[j], b_longest[j], sep=" "), file = "data.out", append = TRUE)
+        write(paste("Bubblesort", probability[prob_index], b_steps[index], b_longest[index], sep=" "), file = "data.out", append = TRUE)
+        index = index + 1
     }
     prob_index = prob_index + 20
 }
 prob_index = 1
+index = 1
 for(i in seq(1, 5)){
     for(j in seq(1, 20)){
-        write(paste("Mergesort", probability[prob_index], m_steps[j], m_longest[j], sep=" "), file = "data.out", append = TRUE)
+        write(paste("Mergesort", probability[prob_index], m_steps[index], m_longest[index], sep=" "), file = "data.out", append = TRUE)
+        index = index + 1
     }
     prob_index = prob_index + 20
 }
 prob_index = 1
+index = 1
 for(i in seq(1, 5)){
     for(j in seq(1, 20)){
-        write(paste("Insertionsort", probability[prob_index], i_steps[j], i_longest[j], sep=" "), file = "data.out", append = TRUE)
+        write(paste("Insertionsort", probability[prob_index], i_steps[index], i_longest[index], sep=" "), file = "data.out", append = TRUE)
+        index = index + 1
     }
     prob_index = prob_index + 20
 }
