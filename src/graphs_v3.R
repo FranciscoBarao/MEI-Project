@@ -7,6 +7,8 @@ bubblesort_steps = as.numeric(bubblesort_steps)
 
 insertionsort_steps = readLines("out/steps - insertionsort.txt");
 insertionsort_steps = as.numeric(insertionsort_steps)
+
+
 b_steps = seq(1, 50, by=1)
 i_steps = seq(1, 50, by=1)
 
