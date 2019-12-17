@@ -58,7 +58,7 @@ points(D[index:(index+tests), "SizeN"], D[index:(index+tests), "nSteps"], col="r
 
 # "bubblesort"
 print(strings[2])
-index = index + test + 1
+index = index + tests + 1
 lr.out = lm(sqrt(D[index:(index+tests), "nSteps"]) ~ D[index:(index+tests), "SizeN"])
 summ <- summary(lr.out)
 print(summary(lr.out))
