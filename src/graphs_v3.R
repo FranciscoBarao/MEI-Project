@@ -74,7 +74,7 @@ for(j in seq(1, maintests)){
 index = 1
 elem_index = 1351
 for(j in seq(1, maintests)){
-    write(paste("Bubblesort", elements[elem_index], value, b_steps[index], b_longest[index], sep=" "), file = "data_v2.out", append = TRUE)
+    write(paste("Bubblesort", elements[elem_index], b_steps[index], b_longest[index], sep=" "), file = "data_v2.out", append = TRUE)
     index = index + 1
     elem_index = elem_index + 1
 }
@@ -82,7 +82,7 @@ for(j in seq(1, maintests)){
 index = 1
 elem_index = 1351
 for(j in seq(1, maintests)){
-    write(paste("Mergesort", elements[elem_index], value, m_steps[index], m_longest[index], sep=" "), file = "data_v2.out", append = TRUE)
+    write(paste("Mergesort", elements[elem_index], m_steps[index], m_longest[index], sep=" "), file = "data_v2.out", append = TRUE)
     index = index + 1
     elem_index = elem_index + 1
 }
@@ -90,7 +90,7 @@ for(j in seq(1, maintests)){
 index = 1
 elem_index = 1351
 for(j in seq(1, maintests)){
-    write(paste("Insertionsort", elements[elem_index], value, i_steps[index], i_longest[index], sep=" "), file = "data_v2.out", append = TRUE)
+    write(paste("Insertionsort", elements[elem_index], i_steps[index], i_longest[index], sep=" "), file = "data_v2.out", append = TRUE)
     index = index + 1
     elem_index = elem_index + 1
 }
