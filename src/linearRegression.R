@@ -60,12 +60,12 @@ points(D[index:(index+tests), "SizeN"], D[index:(index+tests), "nSteps"], col="r
 # "bubblesort"
 print(strings[2])
 index = index + alg
-lr.out = lm(D[index:(index+tests), "nSteps"] ~ D[index:(index+tests), "SizeN"])
+lr.out = lm(sqrt(D[index:(index+tests), "nSteps"]) ~ D[index:(index+tests), "SizeN"])
 summ <- summary(lr.out)
 print(summary(lr.out))
 a = summ$coefficients[1]
 b = summ$coefficients[2]
-curve(a + b*x,min_number_elements,max_number_elements) 
+curve((a + b*x)^2,min_number_elements,max_number_elements) 
 points(D[index:(index+tests), "SizeN"], D[index:(index+tests), "nSteps"], col="red")
 
 # "mergesort"
@@ -82,12 +82,12 @@ points(D[index:(index+tests), "SizeN"], D[index:(index+tests), "nSteps"], col="r
 # "insertionsort"
 print(strings[4])
 index = index + alg
-lr.out = lm(D[index:(index+tests), "nSteps"] ~ D[index:(index+tests), "SizeN"])
+lr.out = lm(sqrt(D[index:(index+tests), "nSteps"]) ~ D[index:(index+tests), "SizeN"])
 summ <- summary(lr.out)
 print(summary(lr.out))
 a = summ$coefficients[1]
 b = summ$coefficients[2]
-curve(a + b*x,min_number_elements,max_number_elements) 
+curve((a + b*x)^2,min_number_elements,max_number_elements) 
 points(D[index:(index+tests), "SizeN"], D[index:(index+tests), "nSteps"], col="red")
 
 # Quicksort
