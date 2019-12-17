@@ -71,4 +71,39 @@ plot(elements[1351:1400], b_steps[1:50], main=paste("Quicksort Swaps - No scale"
 plot(elements[1351:1400], i_longest[1:50], main=paste("Insertionsort Longest - No scale"), xlab = "Number of elements", ylab="Largest Subarray / Number of elements (%)")
 plot(elements[1351:1400], i_longest[1:50], main=paste("Mergesort Longest - No scale"), xlab = "Number of elements", ylab="Largest Subarray / Number of elements (%)")
 
+write("Algorithm SizeN nSteps Longest", file = "data_v2.out", append = FALSE)
+index = 1
+elem_index = 1351
+maintests = 50
+for(j in seq(1, maintests)){
+    write(paste("Quicksort", elements[elem_index], q_steps[index], q_longest[index], sep=" "), file = "data_v2.out", append = TRUE)
+    index = index + 1
+    elem_index = elem_index + 1
+}
+
+index = 1
+elem_index = 1351
+for(j in seq(1, maintests)){
+    write(paste("Bubblesort", elements[elem_index], value, b_steps[index], b_longest[index], sep=" "), file = "data_v2.out", append = TRUE)
+    index = index + 1
+    elem_index = elem_index + 1
+}
+
+index = 1
+elem_index = 1351
+for(j in seq(1, maintests)){
+    write(paste("Mergesort", elements[elem_index], value, m_steps[index], m_longest[index], sep=" "), file = "data_v2.out", append = TRUE)
+    index = index + 1
+    elem_index = elem_index + 1
+}
+
+index = 1
+elem_index = 1351
+for(j in seq(1, maintests)){
+    write(paste("Insertionsort", elements[elem_index], value, i_steps[index], i_longest[index], sep=" "), file = "data_v2.out", append = TRUE)
+    index = index + 1
+    elem_index = elem_index + 1
+}
+
+
 
