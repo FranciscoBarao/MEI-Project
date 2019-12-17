@@ -1,10 +1,11 @@
+# File created for data_v2.out table which has more number of elements   
+#
 # Probability = x
 # Algorithm = y
 #  number_elements       Longest Subarray    
 #       1                      1234               
 #       2                      4124               
-#       3                      5123        
-       
+#       3                      5123   
 
 strings = c("quicksort", "bubblesort", "mergesort", "insertionsort")
 min_number_elements = 500
@@ -12,15 +13,12 @@ max_number_elements = 10000
 a=0
 b=0
 
-alg = 300
-tests = 19
-val = 100
-errorProb = 40
+tests = 49
 
 
 #Reciprocal
-D = read.table("data.out",header=TRUE, fill=TRUE)
-index = 1 + val + errorProb
+D = read.table("data_v2.out",header=TRUE, fill=TRUE)
+index = 1
 for(i in seq(1,4)){
     print(strings[i])
     lr.out = lm(1/D[index:(index+tests), "Longest"] ~ D[index:(index+tests), "SizeN"])
@@ -43,13 +41,13 @@ for(i in seq(1,4)){
     points(D[index:(index+tests), "SizeN"], D[index:(index+tests), "Longest"], col="red")
     #Optional:  y = 1/(a + b*x) || plot(D$year,y)
 
-    index = index + alg
+    index = index + tests + 1 # Value: 50
 }
 
 
 # "quicksort"
 print(strings[1])
-index = 1 + val + errorProb
+index = 1
 lr.out = lm(D[index:(index+tests), "nSteps"] ~ D[index:(index+tests), "SizeN"])
 summ <- summary(lr.out)
 print(summary(lr.out))
@@ -60,7 +58,7 @@ points(D[index:(index+tests), "SizeN"], D[index:(index+tests), "nSteps"], col="r
 
 # "bubblesort"
 print(strings[2])
-index = index + alg
+index = index + test + 1
 lr.out = lm(sqrt(D[index:(index+tests), "nSteps"]) ~ D[index:(index+tests), "SizeN"])
 summ <- summary(lr.out)
 print(summary(lr.out))
@@ -71,7 +69,7 @@ points(D[index:(index+tests), "SizeN"], D[index:(index+tests), "nSteps"], col="r
 
 # "mergesort"
 print(strings[3])
-index = index + alg
+index = index + tests + 1
 lr.out = lm(D[index:(index+tests), "nSteps"] ~ D[index:(index+tests), "SizeN"])
 summ <- summary(lr.out)
 print(summary(lr.out))
@@ -82,7 +80,7 @@ points(D[index:(index+tests), "SizeN"], D[index:(index+tests), "nSteps"], col="r
 
 # "insertionsort"
 print(strings[4])
-index = index + alg
+index = index + tests + 1
 lr.out = lm(sqrt(D[index:(index+tests), "nSteps"]) ~ D[index:(index+tests), "SizeN"])
 summ <- summary(lr.out)
 print(summary(lr.out))

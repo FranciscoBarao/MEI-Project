@@ -1,8 +1,9 @@
 
+# This file is used to generate values and create datav2.out tables
+# With number of elements = 50 | error prob = 0.021 | value range = 0.5
+
 elements = readLines("out/elements.txt");
 elements = as.numeric(elements)
-
-
 
 quicksort_longest = readLines("out/longest_arr - quicksort.txt");
 quicksort_longest = as.numeric(quicksort_longest)
@@ -50,15 +51,24 @@ for(i in seq(1, 50)){
     count = count + 1
 }
 
-plot(elements[1351:1400], b_steps[1:50], main=paste("Bubblesort Swaps"), xlab = "Number of elements", ylab="Number of swaps")
-plot(elements[1351:1400], i_steps[1:50], main=paste("Insertionsort Swaps"), xlab = "Number of elements", ylab="Number of swaps")
-plot(elements[1351:1400], b_steps[1:50], main=paste("Quicksort Swaps"), xlab = "Number of elements", ylab="Number of swaps")
-plot(elements[1351:1400], i_steps[1:50], main=paste("Mergesort Swaps"), xlab = "Number of elements", ylab="Number of swaps")
+y_lim_steps = 25000000
+y_lim_longest = 25
+plot(elements[1351:1400], b_steps[1:50], ylim=c(0,y_lim_steps), main=paste("Bubblesort Swaps"), xlab = "Number of elements", ylab="Number of swaps")
+plot(elements[1351:1400], i_steps[1:50], ylim=c(0,y_lim_steps), main=paste("Insertionsort Swaps"), xlab = "Number of elements", ylab="Number of swaps")
+plot(elements[1351:1400], b_steps[1:50], ylim=c(0,y_lim_steps), main=paste("Quicksort Swaps"), xlab = "Number of elements", ylab="Number of swaps")
+plot(elements[1351:1400], i_steps[1:50], ylim=c(0,y_lim_steps), main=paste("Mergesort Swaps"), xlab = "Number of elements", ylab="Number of swaps")
 
-plot(elements[1351:1400], b_longest[1:50], main=paste("Bubblesort Swaps"), xlab = "Number of elements", ylab="Largest Subarray / Number of elements (%)")
-plot(elements[1351:1400], i_longest[1:50], main=paste("Insertionsort Swaps"), xlab = "Number of elements", ylab="Largest Subarray / Number of elements (%)")
-plot(elements[1351:1400], b_longest[1:50], main=paste("Quicksort Swaps"), xlab = "Number of elements", ylab="Largest Subarray / Number of elements (%)")
-plot(elements[1351:1400], i_longest[1:50], main=paste("Mergesort Swaps"), xlab = "Number of elements", ylab="Largest Subarray / Number of elements (%)")
+plot(elements[1351:1400], b_longest[1:50], ylim=c(0,y_lim_longest), main=paste("Bubblesort Longest"), xlab = "Number of elements", ylab="Largest Subarray / Number of elements (%)")
+plot(elements[1351:1400], i_longest[1:50], ylim=c(0,y_lim_longest), main=paste("Insertionsort Longest"), xlab = "Number of elements", ylab="Largest Subarray / Number of elements (%)")
+plot(elements[1351:1400], b_longest[1:50], ylim=c(0,y_lim_longest), main=paste("Quicksort Longest"), xlab = "Number of elements", ylab="Largest Subarray / Number of elements (%)")
+plot(elements[1351:1400], i_longest[1:50], ylim=c(0,y_lim_longest), main=paste("Mergesort Longest"), xlab = "Number of elements", ylab="Largest Subarray / Number of elements (%)")
 
+
+
+plot(elements[1351:1400], b_steps[1:50], main=paste("Bubblesort Swaps - No scale"), xlab = "Number of elements", ylab="Number of swaps")
+plot(elements[1351:1400], b_steps[1:50], main=paste("Quicksort Swaps - No scale"), xlab = "Number of elements", ylab="Number of swaps")
+
+plot(elements[1351:1400], i_longest[1:50], main=paste("Insertionsort Longest - No scale"), xlab = "Number of elements", ylab="Largest Subarray / Number of elements (%)")
+plot(elements[1351:1400], i_longest[1:50], main=paste("Mergesort Longest - No scale"), xlab = "Number of elements", ylab="Largest Subarray / Number of elements (%)")
 
 
