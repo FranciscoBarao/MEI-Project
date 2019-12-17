@@ -39,7 +39,9 @@ for(i in seq(1,4)){
     curve(1/(a + b*x),min_number_elements,max_number_elements) 
     points(D[index:(index+tests), "SizeN"], D[index:(index+tests), "Longest"], col="red")
 
-    plot(D[index:(index+tests), "SizeN"], 1/D[index:(index+tests), "Longest"])
+    curve((a + b*x),min_number_elements,max_number_elements) 
+    points(D[index:(index+tests), "SizeN"], 1/D[index:(index+tests), "Longest"])
+
     #Optional:  y = 1/(a + b*x) || plot(D$year,y)
 
     index = index + tests + 1 # Value: 50
@@ -68,7 +70,9 @@ a = summ$coefficients[1]
 b = summ$coefficients[2]
 curve((a + b*x)^2,min_number_elements,max_number_elements) 
 points(D[index:(index+tests), "SizeN"], D[index:(index+tests), "nSteps"], col="red")
-plot(D[index:(index+tests), "SizeN"], sqrt(D[index:(index+tests), "nSteps"]))
+
+curve((a + b*x),min_number_elements,max_number_elements) 
+points(D[index:(index+tests), "SizeN"], sqrt(D[index:(index+tests), "nSteps"]))
 
 # "mergesort"
 print(strings[3])
@@ -91,4 +95,6 @@ a = summ$coefficients[1]
 b = summ$coefficients[2]
 curve((a + b*x)^2,min_number_elements,max_number_elements) 
 points(D[index:(index+tests), "SizeN"], D[index:(index+tests), "nSteps"], col="red")
-plot(D[index:(index+tests), "SizeN"], sqrt(D[index:(index+tests), "nSteps"]))
+
+curve((a + b*x),min_number_elements,max_number_elements) 
+points(D[index:(index+tests), "SizeN"], sqrt(D[index:(index+tests), "nSteps"]))
