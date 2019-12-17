@@ -26,16 +26,16 @@ for(i in seq(1,4)){
     summ <- summary(lr.out)
 
     print("------------------------PRINTING RESULTS---------------------------")
-    print(summary(lr.out))
-    print(summ$r.squared)
-    print(summ$coefficients[1])
-    print(summ$coefficients[2])
+    #print(summary(lr.out))
+    cat("r:  ",summ$r.squared,"\n")
+    cat("ra: ",summ$adj.r.squared,"\n")
+    cat("a:  ",summ$coefficients[1],"\n")
+    cat("b:  ",summ$coefficients[2],"\n")
     print("------------------------------Over---------------------------------")
 
     a = summ$coefficients[1]
     b = summ$coefficients[2]
 
-    #plot(D[index:(index+tests), "SizeN"], D[index:(index+tests), "Longest"])
     
     curve(1/(a + b*x),min_number_elements,max_number_elements) 
     
