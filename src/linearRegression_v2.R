@@ -39,7 +39,7 @@ for(i in seq(1,4)){
     curve(1/(a + b*x),min_number_elements,max_number_elements) 
     points(D[index:(index+tests), "SizeN"], D[index:(index+tests), "Longest"], col="red")
 
-    curve((a + b*x),min_number_elements,max_number_elements) 
+    curve((a + b*x),min_number_elements,max_number_elements, xlab = "Number of elements", ylab="Longest Subarray(%)") 
     points(D[index:(index+tests), "SizeN"], 1/D[index:(index+tests), "Longest"])
 
     #Optional:  y = 1/(a + b*x) || plot(D$year,y)
@@ -71,7 +71,7 @@ b = summ$coefficients[2]
 curve((a + b*x)^2,min_number_elements,max_number_elements) 
 points(D[index:(index+tests), "SizeN"], D[index:(index+tests), "nSteps"], col="red")
 
-curve((a + b*x),min_number_elements,max_number_elements) 
+curve((a + b*x),min_number_elements,max_number_elements,xlab = "Number of elements", ylab="Number of Swaps") 
 points(D[index:(index+tests), "SizeN"], sqrt(D[index:(index+tests), "nSteps"]))
 
 # "mergesort"
@@ -96,5 +96,5 @@ b = summ$coefficients[2]
 curve((a + b*x)^2,min_number_elements,max_number_elements) 
 points(D[index:(index+tests), "SizeN"], D[index:(index+tests), "nSteps"], col="red")
 
-curve((a + b*x),min_number_elements,max_number_elements) 
+curve((a + b*x),min_number_elements,max_number_elements,xlab = "Number of elements", ylab="Number of steps") 
 points(D[index:(index+tests), "SizeN"], sqrt(D[index:(index+tests), "nSteps"]))
