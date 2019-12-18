@@ -13,7 +13,7 @@ max_number_elements = 10000
 a=0
 b=0
 
-tests = 49
+tests = 249
 
 
 #Reciprocal
